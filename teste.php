@@ -1,3 +1,4 @@
 <?php
- php_version();
+ echo php_version();
+ echo phpinfo();
 ?>
