@@ -1,5 +1,5 @@
 <?php
- # SCRIPT PARA A CRIAÇÃO DA CLASSE PESSOA
+ # SCRIPT PARA A CRIACAO DA CLASSE PESSOA
  class Pessoa {
    protected $nome;
    protected $idade;
