@@ -5,6 +5,7 @@
    protected $idade;
    protected $rg;
    protected $cpf;
+   protected $endereco;
 
    public function setNome($nome) {
    	$this->nome = $nome;
@@ -20,6 +21,10 @@
 
    public function setCPF($cpf) {
    	$this->cpf = $cpf;
+   }
+
+   public function setEndereco($endereco) {
+   	$this->endereco = $endereco;
    }
 
    public function getNome() {
@@ -38,17 +43,24 @@
    	return $this->cpf;
    }
 
+   public function getEndereco() {
+   	return $this->endereco;
+   }
+
    public function __toString() {
    	$strMsg = "=============== INFORMAÇÕES RELACIONADAS À PESSOA ============";
 	$strMsg.= "Sr(a). " . $this->getNome() . ", de " . $this->getIdade() . ", ";
 	$strMsg.= "identificada com CPF nro " . $this->getCPF() . " ";
-	$strMsg.= "e RG nro " . $this->getRG();
+	$strMsg.= "e RG nro " . $this->getRG() . ", ";
+	$strMsg.= "morador(a) na " . $this->endereco();
+
+	return $strMsg;
    }
  }
 
  # CRIANDO UM OBJETO PARA TESTAR A CLASSE PESSOA
  $objPessoa = new Pessoa();
- $objPessoa->setNome("Rogger Alexander")->setIdade("XXX anos")->setRG("V999999-9")->setCPF("999.999.999-99");
+ $objPessoa->setNome("Rogger Alexander")->setIdade("XXX anos")->setRG("V999999-9")->setCPF("999.999.999-99")->setEndereco("Rua XXX, 999 - Bairro XXX - XXX - XX - XXXX");
  echo $objPessoa;
  unset($objPessoa);
 ?>
